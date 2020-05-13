@@ -35,14 +35,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dynamic Id Image Cache"),
+        title: Text("Dynamic Url Image Cache"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            DynamicIdImageCache(
-              imageId: 'testIdImage123',
+            DynamicUrlImageCache(
+              imageId: 'testIdImage124',
               imageUrl: 'https://picsum.photos/200/300',
               height: 300,
               width: 300,

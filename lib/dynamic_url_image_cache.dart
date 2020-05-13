@@ -9,7 +9,7 @@ import 'package:path_provider/path_provider.dart';
 /// Stores your in cache after the first download.
 /// 
 /// The value of [imageId] and [imageUrl] cannot be null.
-class DynamicIdImageCache extends StatefulWidget {
+class DynamicUrlImageCache extends StatefulWidget {
 
   ///The id used to store the image file, is used in the path.
   final String imageId;
@@ -34,7 +34,7 @@ class DynamicIdImageCache extends StatefulWidget {
   ///Image [Widget] width, the default value is 300.
   final double width;
 
-  DynamicIdImageCache({
+  DynamicUrlImageCache({
     Key key,
     @required this.imageId,
     @required this.imageUrl,
@@ -46,10 +46,10 @@ class DynamicIdImageCache extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _DynamicIdImageCacheState createState() => _DynamicIdImageCacheState();
+  _DynamicUrlImageCacheState createState() => _DynamicUrlImageCacheState();
 }
 
-class _DynamicIdImageCacheState extends State<DynamicIdImageCache> {
+class _DynamicUrlImageCacheState extends State<DynamicUrlImageCache> {
 
   bool isLoading = true;
   bool hasError = false;
