@@ -1,8 +1,8 @@
-name: dynamic_id_image_cache
+name: dynamic_url_image_cache
 description: A image cache widget that works with dynamic urls
 version: 0.0.1
 homepage: https://github.com/Gabanelli
-repository: https://github.com/Gabanelli/dynamic_id_image_cache
+repository: https://github.com/Gabanelli/dynamic_url_image_cache
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

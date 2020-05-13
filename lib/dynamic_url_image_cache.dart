@@ -1,4 +1,4 @@
-library dynamic_id_image_cache;
+library dynamic_url_image_cache;
 
 import 'dart:io';
 

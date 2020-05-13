@@ -1,4 +1,4 @@
-# dynamic_id_image_cache
+# dynamic_url_image_cache
 
 A new Flutter package project.
 

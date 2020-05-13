@@ -64,7 +64,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3"
-  dynamic_id_image_cache:
+  dynamic_url_image_cache:
     dependency: "direct main"
     description:
       path: ".."

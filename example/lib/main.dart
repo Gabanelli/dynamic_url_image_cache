@@ -1,4 +1,4 @@
-import 'package:dynamic_id_image_cache/dynamic_id_image_cache.dart';
+import 'package:dynamic_url_image_cache/dynamic_url_image_cache.dart';
 import 'package:flutter/material.dart';
 
 void main() {
