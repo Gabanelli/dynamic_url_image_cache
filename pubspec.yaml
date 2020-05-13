@@ -1,6 +1,6 @@
 name: dynamic_url_image_cache
 description: A image widget that caches the image with an ID, useful for images with dynamic urls, like S3 images.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Gabanelli
 repository: https://github.com/Gabanelli/dynamic_url_image_cache
 
