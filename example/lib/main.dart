@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Dynamic Url Image Cache',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -41,11 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            DynamicUrlImageCache(
-              imageId: 'testIdImage124',
-              imageUrl: 'https://picsum.photos/200/300',
-              height: 300,
-              width: 300,
+            Image(
+              image: DynamicUrlImageCache(
+                imageId: 'testIdImage129',
+                imageUrl: 'https://picsum.photos/200/200',
+              ),
             ),
           ],
         ),
