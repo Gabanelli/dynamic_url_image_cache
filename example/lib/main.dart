@@ -26,12 +26,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   void _resetButtonHandler() {
-    Navigator.pushAndRemoveUntil(
-      context, 
-      MaterialPageRoute(builder: (context) => MyHomePage()), 
-      (_) => false);
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => MyHomePage()), (_) => false);
   }
 
   @override
@@ -45,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             DynamicIdImageCache(
-              imageId: 'testIdImage123', 
+              imageId: 'testIdImage123',
               imageUrl: 'https://picsum.photos/200/300',
               height: 300,
               width: 300,
