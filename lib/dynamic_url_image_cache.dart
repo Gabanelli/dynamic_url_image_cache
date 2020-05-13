@@ -34,6 +34,9 @@ class DynamicUrlImageCache extends StatefulWidget {
   ///Image [Widget] width, the default value is 300.
   final double width;
 
+  /// How a box should be inscribed into another box.
+  final BoxFit fit;
+
   DynamicUrlImageCache({
     Key key,
     @required this.imageId,
@@ -43,6 +46,7 @@ class DynamicUrlImageCache extends StatefulWidget {
     this.onError,
     this.height = 300,
     this.width = 300,
+    this.fit = BoxFit.fill,
   }) : super(key: key);
 
   @override
@@ -121,7 +125,7 @@ class _DynamicUrlImageCacheState extends State<DynamicUrlImageCache> {
         ? this.widget.loadingPlaceholder
         : this.hasError 
           ? this.widget.errorPlaceholder
-          : Image.file(this.image, fit: BoxFit.fill),
+          : Image.file(this.image, fit: this.widget.fit),
     );
   }
 }
