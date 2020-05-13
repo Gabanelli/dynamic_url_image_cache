@@ -1,14 +1,20 @@
 # dynamic_url_image_cache
 
-A new Flutter package project.
+A image widget that caches the image with an ID, useful for images with dynamic urls, like S3 images.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```dart
+DynamicUrlImageCache(
+  imageId: 'testIdImage124',
+  imageUrl: 'https://picsum.photos/200/300',
+  height: 300,
+  width: 300,
+),
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## How it works
+
+When the widget is rendered, it fetch a file that her name matches with the imageId, else it will get the image from web and download into the temporary folder. You can customize the loader, the error placeholder and can use an error callback.
+
+PL are welcomed! :smile:
