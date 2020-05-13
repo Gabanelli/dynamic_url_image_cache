@@ -1,8 +1,8 @@
 name: dynamic_id_image_cache
-description: A new Flutter package project.
+description: A image cache widget that works with dynamic urls
 version: 0.0.1
-author: Guilherme Lima Gabanelli
 homepage: https://github.com/Gabanelli
+repository: https://github.com/Gabanelli/dynamic_id_image_cache
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^1.5.1
 
 dev_dependencies:
   flutter_test:
