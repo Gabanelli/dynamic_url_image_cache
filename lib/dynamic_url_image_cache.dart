@@ -12,8 +12,8 @@ import 'package:path_provider/path_provider.dart';
 /// The value of [imageId] and [imageUrl] cannot be null.
 class DynamicUrlImageCache extends ImageProvider<DynamicUrlImageCache> {
   DynamicUrlImageCache({
-    @required this.imageId,
-    @required this.imageUrl,
+    required this.imageId,
+    required this.imageUrl,
     this.isCaching = true,
     this.scale = 1.0,
   });
@@ -30,9 +30,9 @@ class DynamicUrlImageCache extends ImageProvider<DynamicUrlImageCache> {
   /// Enable or disable image caching
   final double scale;
 
-  Future<Codec> _getImage() async {
+  Future<Codec?> _getImage() async {
     try {
-      File file = await this._findImage(this.imageId);
+      File? file = await this._findImage(this.imageId);
       if (file == null) {
         final dir = (await getTemporaryDirectory()).path;
         final request = await HttpClient().getUrl(Uri.parse(this.imageUrl));
@@ -40,12 +40,12 @@ class DynamicUrlImageCache extends ImageProvider<DynamicUrlImageCache> {
         final bytes = await consolidateHttpClientResponseBytes(response);
         if (bytes.length > 0) {
           File("$dir/${this.imageId}").writeAsBytesSync(bytes);
-          return PaintingBinding.instance.instantiateImageCodec(bytes);
+          return PaintingBinding.instance!.instantiateImageCodec(bytes);
         } else {
           return null;
         }
       } else {
-        return PaintingBinding.instance
+        return PaintingBinding.instance!
             .instantiateImageCodec(await file.readAsBytes());
       }
     } catch (e) {
@@ -54,7 +54,7 @@ class DynamicUrlImageCache extends ImageProvider<DynamicUrlImageCache> {
     }
   }
 
-  Future<File> _findImage(String imgKey) async {
+  Future<File?> _findImage(String imgKey) async {
     try {
       final dir = (await getTemporaryDirectory()).path;
       bool hasFile = await File("$dir/$imgKey").exists();
@@ -70,7 +70,7 @@ class DynamicUrlImageCache extends ImageProvider<DynamicUrlImageCache> {
   @override
   ImageStreamCompleter load(DynamicUrlImageCache key, decode) {
     return MultiFrameImageStreamCompleter(
-        codec: key._getImage(),
+        codec: key._getImage().then((value) => value!),
         scale: key.scale,
         informationCollector: () sync* {
           yield DiagnosticsProperty<ImageProvider>(
